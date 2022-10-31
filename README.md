@@ -12,21 +12,6 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 ---
 
-# Contest setup
-
-## 🐺 C4: Set up repos
-- [ ] Create a new private repo named `YYYY-MM-sponsorname` using this repo as a template.
-- [ ] Rename this repo to reflect contest date (if applicable)
-- [ ] Rename contest H1 below
-- [ ] Update pot sizes
-- [ ] Fill in start and end times in contest bullets below
-- [ ] Add link to submission form in contest details below
-- [ ] Move any relevant information in "contest scope information" above to the bottom of this readme.
-- [ ] Add matching info to the [code423n4.com public contest data here](https://github.com/code-423n4/code423n4.com/blob/main/_data/contests/contests.csv))
-- [ ] Add sponsor to this private repo with 'maintain' level access.
-- [ ] Send the sponsor contact the url for this repo to follow the instructions below and add contracts here. 
-- [ ] Delete this checklist.
-
 # Repo setup
 
 ## ⭐️ Sponsor: Add code to this repo
@@ -60,19 +45,18 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# Sponsorname contest details
-- Total Prize Pool: Sum of below awards
-  - HM awards: XXX XXX (Notion Field: Main Pool)
-  - QA report awards: XXX XXX (Notion Field: QA Pool, usually 10% of total award pool)
-  - Gas report awards: XXX XXX (Notion Field: Gas Pool, usually 5% of total award pool)
-  - Judge + presort awards: XXX XXX (Notion Field: Judge Fee)
-  - Scout awards: $500 USDC (this field doesn't exist in Notion yet, usually $500 USDC)
-  - (this line can be removed if there is no mitigation) Mitigation review contest: XXX XXX (*Opportunity goes to top X certified wardens based on placement in this contest.*)
+# LooksRare contest details
+- Total Prize Pool: $60,500 USDC
+  - HM awards: $42,500 USDC 
+  - QA report awards: $5,000 USDC 
+  - Gas report awards: $2,500 USDC 
+  - Judge + presort awards: $10,000 USDC
+  - Scout awards: $500 USDC 
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/YYYY-MM-sponsorName-contest/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2022-11-looksrare-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts TBD XXX XXX XX 20:00 UTC
-- Ends TBD XXX XXX XX 20:00 UTC
+- Starts November 8, 2022 20:00 UTC
+- Ends November 13, 2022 20:00 UTC
 
 ## C4udit / Publicly Known Issues
 
@@ -102,30 +86,30 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 *Describe any novel or unique curve logic or mathematical models implemented in the contracts*
 
-**C4 staff TODO: fill in scoping form details here for sponsor to confirm or edit**
+*Please confirm or edit scoping details below.*
 
 ## Scoping Details 
 ```
-- If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   
-- Total SLoC for these contracts?:  
-- How many external imports are there?:  
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  
-- Does most of your code generally use composition or inheritance?:   
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?:  
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   
-- Please describe required context:   
-- Does it use an oracle?:  
-- Does the token conform to the ERC20 standard?:  
-- Are there any novel or unique curve logic or mathematical models?: 
-- Does it use a timelock function?:  
-- Is it an NFT?: 
-- Does it have an AMM?:   
-- Is it a fork of a popular project?:   
-- Does it use rollups?:   
-- Is it multi-chain?:  
-- Does it use a side-chain?: 
+- If you have a public code repo, please share it here: N/A 
+- How many contracts are in scope?: 26  
+- Total SLoC for these contracts?: 1230 
+- How many external imports are there?: 11
+- How many separate interfaces and struct definitions are there for the contracts within scope?: 7 
+- Does most of your code generally use composition or inheritance?: Yes
+- How many external calls?: 3  
+- What is the overall line coverage percentage provided by your tests?: Should be 90%+ 
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: True.  
+- Please describe required context: The project integrates with Seaport and LooksRare's exchange protocol.  
+- Does it use an oracle?: False
+- Does the token conform to the ERC20 standard?: We aren't creating a new token. 
+- Are there any novel or unique curve logic or mathematical models?: No
+- Does it use a timelock function?: Yes but only for contract ownership management and not business critical functions. 
+- Is it an NFT?: No
+- Does it have an AMM?: No
+- Is it a fork of a popular project?: False 
+- Does it use rollups?: False 
+- Is it multi-chain?: False  
+- Does it use a side-chain?: False
 ```
 
 # Tests
