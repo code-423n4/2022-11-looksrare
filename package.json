@@ -1,0 +1,90 @@
+{
+  "name": "@looksrare/contracts-aggregator",
+  "version": "1.0.0",
+  "description": "LooksRare aggregator smart contracts",
+  "author": "LooksRare",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "/abis/*.json",
+    "/contracts/*.sol",
+    "/contracts/libraries/*.sol",
+    "/contracts/libraries/seaport/*.sol",
+    "/contracts/interfaces/ILooksRareAggregator.sol",
+    "/contracts/interfaces/IERC20EnabledLooksRareAggregator.sol",
+    "/contracts/interfaces/SeaportInterface.sol",
+    "/contracts/interfaces/IProxy.sol",
+    "/contracts/proxies/LooksRareProxy.sol",
+    "/contracts/proxies/SeaportProxy.sol"
+  ],
+  "keywords": [
+    "looksrare"
+  ],
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "homepage": "https://looksrare.org/",
+  "bugs": "https://github.com/LooksRare/contracts-aggregator/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LooksRare/contracts-aggregator.git"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "compile:force": "hardhat compile --force",
+    "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,sol,json,yaml,md}'",
+    "format:write": "prettier --write '**/*.{js,jsx,ts,tsx,json,yaml,md}'",
+    "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky install",
+    "release": "release-it",
+    "test:hardhat": "hardhat test",
+    "test:forge": "forge test"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@ethersproject/abstract-provider": "^5.7.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.4",
+    "@nomiclabs/hardhat-ethers": "^2.0.6",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@opensea/seaport-js": "^1.0.6",
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.3.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^12.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "axios": "^0.27.2",
+    "chai": "^4.2.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.6.4",
+    "hardhat": "^2.10.1",
+    "hardhat-abi-exporter": "^2.9.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "husky": "^7.0.4",
+    "merkletreejs": "^0.2.31",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "release-it": "^15.0.0",
+    "solhint": "^3.3.7",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.1.0",
+    "typechain": "^5.1.2",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@looksrare/contracts-exchange-v1": "^1.3.0",
+    "@looksrare/contracts-libs": "^2.0.2",
+    "solmate": "^6.6.1"
+  }
+}
