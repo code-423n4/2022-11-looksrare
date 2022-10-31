@@ -45,7 +45,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# LooksRare contest details
+# LooksRare Aggregator contest details
 - Total Prize Pool: $60,500 USDC
   - HM awards: $42,500 USDC 
   - QA report awards: $5,000 USDC 
