@@ -1,0 +1,3 @@
+{
+    "detectors_to_exclude": "arbitrary-send-eth,controlled-delegatecall,incorrect-equality,delegatecall-loop,assembly,calls-loop,missing-zero-check,low-level-calls,naming-convention,solc-version,uninitialized-local,pragma,unused-return,timestamp,reentrancy-events"
+}
