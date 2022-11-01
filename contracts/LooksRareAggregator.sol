@@ -238,16 +238,6 @@ contract LooksRareAggregator is
         );
     }
 
-    function _pullERC20Tokens(TokenTransfer[] calldata tokenTransfers, address source) private {
-        uint256 tokenTransfersLength = tokenTransfers.length;
-        for (uint256 i; i < tokenTransfersLength; ) {
-            _executeERC20TransferFrom(tokenTransfers[i].currency, source, address(this), tokenTransfers[i].amount);
-            unchecked {
-                ++i;
-            }
-        }
-    }
-
     function _returnERC20TokensIfAny(TokenTransfer[] calldata tokenTransfers, address recipient) private {
         uint256 tokenTransfersLength = tokenTransfers.length;
         for (uint256 i; i < tokenTransfersLength; ) {
