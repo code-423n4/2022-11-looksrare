@@ -39,9 +39,6 @@ abstract contract TestParameters {
     address internal _recipient = address(250);
     address internal _operator = address(69);
     uint256 internal _amount = 10_000 * (10**6); // USDT has 6 decimals
-
-    // Ankr RPC endpoint is public
-    string internal _MAINNET_RPC_URL = "https://rpc.ankr.com/eth";
 }
 
 interface IUSDT {
@@ -62,7 +59,7 @@ contract USDTLowLevelERC20Test is TestHelpers, TestParameters {
     uint256 internal _mainnetFork;
 
     function setUp() external {
-        _mainnetFork = vm.createFork(_MAINNET_RPC_URL);
+        _mainnetFork = vm.createFork(vm.rpcUrl("mainnet"));
         vm.selectFork(_mainnetFork);
         lowLevelERC20 = new ImplementedLowLevelERC20();
     }
