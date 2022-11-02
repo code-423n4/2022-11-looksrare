@@ -20,7 +20,7 @@ contract GemSwapBenchmarkTest is TestParameters, TestHelpers, SeaportProxyTestHe
     IERC721 private bayc;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_503_771);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_503_771);
         vm.deal(_buyer, INITIAL_ETH_BALANCE);
         bayc = IERC721(BAYC);
     }

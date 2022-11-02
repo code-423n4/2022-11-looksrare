@@ -27,7 +27,6 @@ abstract contract TestParameters {
 
     uint256 internal constant luckyNumber = 6.9420 ether;
 
-    string internal constant MAINNET_RPC_URL = "https://rpc.ankr.com/eth";
     uint256 internal constant INITIAL_ETH_BALANCE = 400 ether;
     uint256 internal constant INITIAL_USDC_BALANCE = 500000e6;
 

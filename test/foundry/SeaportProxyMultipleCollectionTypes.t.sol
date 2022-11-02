@@ -20,7 +20,7 @@ contract SeaportProxyMultipleCollectionTypesTest is TestParameters, TestHelpers,
     SeaportProxy private seaportProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_323_472);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_323_472);
 
         aggregator = new LooksRareAggregator();
         seaportProxy = new SeaportProxy(SEAPORT, address(aggregator));

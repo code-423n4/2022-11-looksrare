@@ -24,7 +24,7 @@ contract LooksRareProxyTest is TestParameters, TestHelpers, TokenRescuerTest, Lo
     TokenRescuer private tokenRescuer;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_282_897);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_282_897);
 
         aggregator = new LooksRareAggregator();
         looksRareProxy = new LooksRareProxy(LOOKSRARE_V1, address(aggregator));

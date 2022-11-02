@@ -23,7 +23,7 @@ contract SeaportProxyMultipleCurrenciesTest is TestParameters, TestHelpers, Seap
     SeaportProxy private seaportProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_447_813);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_447_813);
 
         aggregator = new LooksRareAggregator();
         erc20EnabledAggregator = new ERC20EnabledLooksRareAggregator(address(aggregator));

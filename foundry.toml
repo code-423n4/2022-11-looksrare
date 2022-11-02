@@ -41,3 +41,6 @@ via_ir = false
 [profile.local.optimizer_details.yulDetails]
 stackAllocation = true
 optimizerSteps = ''
+
+[rpc_endpoints]
+mainnet = "${MAINNET_RPC_URL}"

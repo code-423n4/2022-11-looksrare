@@ -24,7 +24,7 @@ contract SeaportProxyBenchmarkTest is TestParameters, TestHelpers, SeaportProxyT
     SeaportProxy private seaportProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_300_884);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_300_884);
         vm.deal(_buyer, 100 ether);
     }
 

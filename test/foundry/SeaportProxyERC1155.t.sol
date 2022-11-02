@@ -7,15 +7,8 @@ import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";
 import {ILooksRareAggregator} from "../../contracts/interfaces/ILooksRareAggregator.sol";
 import {BasicOrder, TokenTransfer} from "../../contracts/libraries/OrderStructs.sol";
 import {TestHelpers} from "./TestHelpers.sol";
+import {TestParameters} from "./TestParameters.sol";
 import {SeaportProxyTestHelpers} from "./SeaportProxyTestHelpers.sol";
-
-abstract contract TestParameters {
-    address internal constant _buyer = address(1);
-    address internal constant _protocolFeeRecipient = address(2);
-    string internal constant MAINNET_RPC_URL = "https://rpc.ankr.com/eth";
-    uint256 internal constant INITIAL_ETH_BALANCE = 1 ether;
-    event Sweep(address indexed sweeper);
-}
 
 /**
  * @notice SeaportProxy ERC1155 tests (fees, refund, atomic fail/partial success)
@@ -25,7 +18,7 @@ contract SeaportProxyERC1155Test is TestParameters, TestHelpers, SeaportProxyTes
     SeaportProxy private seaportProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_320_038);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_320_038);
 
         aggregator = new LooksRareAggregator();
         seaportProxy = new SeaportProxy(SEAPORT, address(aggregator));
@@ -85,7 +78,7 @@ contract SeaportProxyERC1155Test is TestParameters, TestHelpers, SeaportProxyTes
 
         aggregator.execute{value: tradeData[0].value}(tokenTransfers, tradeData, _buyer, _buyer, false);
         assertEq(IERC1155(CITY_DAO).balanceOf(_buyer, 42), 1);
-        assertEq(_buyer.balance, 0.702 ether);
+        assertEq(_buyer.balance, INITIAL_ETH_BALANCE - tradeData[0].value);
     }
 
     function _testExecute(bool isAtomic) private {
@@ -126,7 +119,7 @@ contract SeaportProxyERC1155Test is TestParameters, TestHelpers, SeaportProxyTes
 
         aggregator.execute{value: tradeData[0].value}(tokenTransfers, tradeData, _buyer, _buyer, isAtomic);
         assertEq(IERC1155(CITY_DAO).balanceOf(_buyer, 42), 2);
-        assertEq(_buyer.balance, 0.303 ether);
+        assertEq(_buyer.balance, 399.303 ether);
     }
 
     function _generateTradeData(bool isAtomic)
