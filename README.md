@@ -130,10 +130,25 @@ The line `if (address(this) != aggregator) revert InvalidCaller();` does it.
 - Does it use a side-chain?: False
 ```
 
-# Installation
+# Quickstart (From `git clone` to running all tests in one line)
+
+```
+`rm -Rf 2022-11-looksrare || true && git clone https://github.com/code-423n4/2022-11-looksrare.git && cd 2022-11-looksrare && yarn install && cp .env.template .env && FORGE_GAS_REPORT=true FOUNDRY_PROFILE=local forge test`
+```
+
+# Install dependencies
 
 ```
 yarn install
+```
+
+# Build
+
+To reduce wait time, run any build/test related commands with FOUNDRY_PROFILE=local.
+It turns off the Yul IR pipeline.
+
+```
+FOUNDRY_PROFILE=local forge build
 ```
 
 # Tests
@@ -148,9 +163,9 @@ FOUNDRY_PROFILE=local forge test # via_ir: false
 ## Gas benchmark
 
 ```
-forge test --match-contract GemSwapBenchmarkTest
-forge test --match-contract LooksRareProxyBenchmarkTest
-forge test --match-contract SeaportProxyBenchmarkTest
+FOUNDRY_PROFILE=local forge test --match-contract GemSwapBenchmarkTest
+FOUNDRY_PROFILE=local forge test --match-contract LooksRareProxyBenchmarkTest
+FOUNDRY_PROFILE=local forge test --match-contract SeaportProxyBenchmarkTest
 ```
 
 ## Static analysis
