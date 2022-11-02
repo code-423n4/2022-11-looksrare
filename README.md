@@ -21,7 +21,7 @@ The C4audit output for the contest can be found here, [include link to C4udit re
 
 # Overview
 
-The main contracts below and the contracts they inherited from are under the scope of this audit.
+These are the top-level contracts of the project.
 
 - [LooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/LooksRareAggregator.sol): An NFT liquidity aggregator that allows anyone to buy ERC721/ERC1155 tokens from multiple
   marketplaces in a single transaction. Users can only execute trades through proxies that have been whitelisted
@@ -133,7 +133,7 @@ The line `if (address(this) != aggregator) revert InvalidCaller();` does it.
 # Quickstart (From `git clone` to running all tests in one line)
 
 ```
-`rm -Rf 2022-11-looksrare || true && git clone https://github.com/code-423n4/2022-11-looksrare.git && cd 2022-11-looksrare && yarn install && cp .env.template .env && FORGE_GAS_REPORT=true FOUNDRY_PROFILE=local forge test`
+rm -Rf 2022-11-looksrare || true && git clone https://github.com/code-423n4/2022-11-looksrare.git && cd 2022-11-looksrare && yarn install && cp .env.template .env && FORGE_GAS_REPORT=true FOUNDRY_PROFILE=local forge test
 ```
 
 # Install dependencies
@@ -148,6 +148,7 @@ To reduce wait time, run any build/test related commands with FOUNDRY_PROFILE=lo
 It turns off the Yul IR pipeline.
 
 ```
+cp .env.template .env
 FOUNDRY_PROFILE=local forge build
 ```
 
@@ -156,6 +157,7 @@ FOUNDRY_PROFILE=local forge build
 ## Foundry tests
 
 ```
+cp .env.template .env
 forge test # via_ir: true
 FOUNDRY_PROFILE=local forge test # via_ir: false
 ```
