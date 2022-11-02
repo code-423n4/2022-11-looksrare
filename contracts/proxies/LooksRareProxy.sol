@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {SignatureChecker} from "@looksrare/contracts-libs/contracts/SignatureChecker.sol";
-import {IERC721} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC721.sol";
-import {IERC1155} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC1155.sol";
+import {SignatureChecker} from "../SignatureChecker.sol";
+import {IERC721} from "../../contracts/interfaces/IERC721.sol";
+import {IERC1155} from "../../contracts/interfaces/IERC1155.sol";
 import {ILooksRareExchange} from "@looksrare/contracts-exchange-v1/contracts/interfaces/ILooksRareExchange.sol";
 import {OrderTypes} from "@looksrare/contracts-exchange-v1/contracts/libraries/OrderTypes.sol";
 

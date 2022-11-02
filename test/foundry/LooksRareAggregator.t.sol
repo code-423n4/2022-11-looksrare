@@ -7,7 +7,7 @@ import {LooksRareProxy} from "../../contracts/proxies/LooksRareProxy.sol";
 import {TokenRescuer} from "../../contracts/TokenRescuer.sol";
 import {ILooksRareAggregator} from "../../contracts/interfaces/ILooksRareAggregator.sol";
 import {BasicOrder, TokenTransfer} from "../../contracts/libraries/OrderStructs.sol";
-import {IOwnableTwoSteps} from "@looksrare/contracts-libs/contracts/interfaces/IOwnableTwoSteps.sol";
+import {IOwnableTwoSteps} from "../../contracts/interfaces/IOwnableTwoSteps.sol";
 import {MockERC20} from "./utils/MockERC20.sol";
 import {MockERC721} from "./utils/MockERC721.sol";
 import {MockERC1155} from "./utils/MockERC1155.sol";

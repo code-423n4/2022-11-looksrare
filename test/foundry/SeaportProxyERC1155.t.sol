@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {IERC1155} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC1155.sol";
+import {IERC1155} from "../../contracts/interfaces/IERC1155.sol";
 import {SeaportProxy} from "../../contracts/proxies/SeaportProxy.sol";
 import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";
 import {ILooksRareAggregator} from "../../contracts/interfaces/ILooksRareAggregator.sol";

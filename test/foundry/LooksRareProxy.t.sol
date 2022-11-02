@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {OwnableTwoSteps} from "@looksrare/contracts-libs/contracts/OwnableTwoSteps.sol";
-import {IERC721} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC721.sol";
+import {OwnableTwoSteps} from "../../contracts/OwnableTwoSteps.sol";
+import {IERC721} from "../../contracts/interfaces/IERC721.sol";
 import {LooksRareProxy} from "../../contracts/proxies/LooksRareProxy.sol";
 import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";
 import {TokenRescuer} from "../../contracts/TokenRescuer.sol";

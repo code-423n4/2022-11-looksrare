@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {OwnableTwoSteps} from "@looksrare/contracts-libs/contracts/OwnableTwoSteps.sol";
+import {OwnableTwoSteps} from "../../contracts/OwnableTwoSteps.sol";
 import {SeaportProxy} from "../../contracts/proxies/SeaportProxy.sol";
 import {TokenRescuer} from "../../contracts/TokenRescuer.sol";
 import {OrderType} from "../../contracts/libraries/seaport/ConsiderationEnums.sol";

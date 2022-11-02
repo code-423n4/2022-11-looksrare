@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {IERC20} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC20.sol";
-
+import {IERC20} from "../interfaces/IERC20.sol";
 import {CollectionType} from "../libraries/OrderEnums.sol";
 import {BasicOrder, FeeData} from "../libraries/OrderStructs.sol";
 import {ItemType, OrderType} from "../libraries/seaport/ConsiderationEnums.sol";
