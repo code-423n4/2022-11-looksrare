@@ -23,7 +23,7 @@ contract SeaportProxyMultipleCurrenciesRandomOrderFeesTest is TestParameters, Te
     SeaportProxy private seaportProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_491_323);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_491_323);
 
         aggregator = new LooksRareAggregator();
         erc20EnabledAggregator = new ERC20EnabledLooksRareAggregator(address(aggregator));

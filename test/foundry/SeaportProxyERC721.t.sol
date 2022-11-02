@@ -7,16 +7,8 @@ import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";
 import {ILooksRareAggregator} from "../../contracts/interfaces/ILooksRareAggregator.sol";
 import {BasicOrder, TokenTransfer} from "../../contracts/libraries/OrderStructs.sol";
 import {TestHelpers} from "./TestHelpers.sol";
+import {TestParameters} from "./TestParameters.sol";
 import {SeaportProxyTestHelpers} from "./SeaportProxyTestHelpers.sol";
-
-abstract contract TestParameters {
-    address internal constant BAYC = 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D;
-    address internal constant _buyer = address(1);
-    address internal constant _protocolFeeRecipient = address(2);
-    string internal constant MAINNET_RPC_URL = "https://rpc.ankr.com/eth";
-    uint256 internal constant INITIAL_ETH_BALANCE = 200 ether;
-    event Sweep(address indexed sweeper);
-}
 
 /**
  * @notice SeaportProxy additional execution tests (fees, refund, atomic fail/partial success)
@@ -26,7 +18,7 @@ contract SeaportProxyERC721Test is TestParameters, TestHelpers, SeaportProxyTest
     SeaportProxy private seaportProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_300_884);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_300_884);
 
         aggregator = new LooksRareAggregator();
         seaportProxy = new SeaportProxy(SEAPORT, address(aggregator));
@@ -127,11 +119,11 @@ contract SeaportProxyERC721Test is TestParameters, TestHelpers, SeaportProxyTest
 
         vm.expectEmit(true, true, false, false);
         emit Sweep(_buyer);
-        aggregator.execute{value: INITIAL_ETH_BALANCE}(new TokenTransfer[](0), tradeData, _buyer, _buyer, isAtomic);
+        aggregator.execute{value: 200 ether}(new TokenTransfer[](0), tradeData, _buyer, _buyer, isAtomic);
 
         assertEq(IERC721(BAYC).ownerOf(2518), _buyer);
         assertEq(IERC721(BAYC).ownerOf(8498), _buyer);
-        assertEq(address(_buyer).balance, 31.22 ether);
+        assertEq(address(_buyer).balance, 231.22 ether);
     }
 
     function _testExecuteWithFees(bool isAtomic) private {

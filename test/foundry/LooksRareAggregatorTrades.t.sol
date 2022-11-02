@@ -27,7 +27,7 @@ contract LooksRareAggregatorTradesTest is
     LooksRareAggregator private aggregator;
 
     function testExecuteZeroOriginator() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_282_897);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_282_897);
 
         aggregator = new LooksRareAggregator();
         LooksRareProxy looksRareProxy = new LooksRareProxy(LOOKSRARE_V1, address(aggregator));
@@ -65,7 +65,7 @@ contract LooksRareAggregatorTradesTest is
     }
 
     function testExecuteReentrancy() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_320_038);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_320_038);
 
         aggregator = new LooksRareAggregator();
         SeaportProxy seaportProxy = new SeaportProxy(SEAPORT, address(aggregator));

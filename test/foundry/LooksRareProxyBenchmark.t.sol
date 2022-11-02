@@ -23,7 +23,7 @@ contract LooksRareProxyBenchmarkTest is TestParameters, TestHelpers, LooksRarePr
     LooksRareProxy private looksRareProxy;
 
     function setUp() public {
-        vm.createSelectFork(MAINNET_RPC_URL, 15_282_897);
+        vm.createSelectFork(vm.rpcUrl("mainnet"), 15_282_897);
         vm.deal(_buyer, 200 ether);
     }
 
