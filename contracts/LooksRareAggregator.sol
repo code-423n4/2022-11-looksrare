@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {ReentrancyGuard} from "@looksrare/contracts-libs/contracts/ReentrancyGuard.sol";
-import {LowLevelERC20Approve} from "@looksrare/contracts-libs/contracts/lowLevelCallers/LowLevelERC20Approve.sol";
-import {LowLevelERC721Transfer} from "@looksrare/contracts-libs/contracts/lowLevelCallers/LowLevelERC721Transfer.sol";
-import {LowLevelERC1155Transfer} from "@looksrare/contracts-libs/contracts/lowLevelCallers/LowLevelERC1155Transfer.sol";
-import {IERC20} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC20.sol";
+import {ReentrancyGuard} from "./ReentrancyGuard.sol";
+import {LowLevelERC20Approve} from "./lowLevelCallers/LowLevelERC20Approve.sol";
+import {LowLevelERC721Transfer} from "./lowLevelCallers/LowLevelERC721Transfer.sol";
+import {LowLevelERC1155Transfer} from "./lowLevelCallers/LowLevelERC1155Transfer.sol";
+import {IERC20} from "./interfaces/IERC20.sol";
 import {LooksRareProxy} from "./proxies/LooksRareProxy.sol";
 import {BasicOrder, TokenTransfer} from "./libraries/OrderStructs.sol";
 import {TokenRescuer} from "./TokenRescuer.sol";

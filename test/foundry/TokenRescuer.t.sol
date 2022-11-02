@@ -3,7 +3,7 @@ pragma solidity 0.8.17;
 
 import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";
 import {TokenRescuer} from "../../contracts/TokenRescuer.sol";
-import {IOwnableTwoSteps} from "@looksrare/contracts-libs/contracts/interfaces/IOwnableTwoSteps.sol";
+import {IOwnableTwoSteps} from "../../contracts/interfaces/IOwnableTwoSteps.sol";
 import {MockERC20} from "./utils/MockERC20.sol";
 import {TestHelpers} from "./TestHelpers.sol";
 import {TestParameters} from "./TestParameters.sol";

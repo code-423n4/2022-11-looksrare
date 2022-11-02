@@ -51,24 +51,24 @@ The main contracts below and the contracts they inherited from are under the sco
 | [ConsiderationStructs](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/libraries/seaport/ConsiderationStructs.sol) | 122 | Seaport consideration structs | N/A |
 | [OrderEnums](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/libraries/OrderEnums.sol) | 2 | Aggregator order enums | N/A |
 | [OrderStructs](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/libraries/OrderStructs.sol) | 22 | Aggregator order structs | N/A |
-| [LooksRareProxy](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/proxies/LooksRareProxy.sol) | 101 | Execute trades on LooksRare protocol (calls LooksRare) | [@looksrare/contract-libs](https://github.com/LooksRare/contracts-libs), [@looksrare/contracts-exchange-v1](https://github.com/looksrare/contracts-exchange-v1) |
-| [SeaportProxy](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/proxies/SeaportProxy.sol) | 206 | Execute trades on Seaport (calls Seaport) | [@looksrare/contract-libs](https://github.com/LooksRare/contracts-libs) |
-| [ERC20EnabledLooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/ERC20EnabledLooksRareAggregator.sol) | 35 | Aggregate ERC20 trades to different marketplaces | [@looksrare/contract-libs](https://github.com/LooksRare/contracts-libs) |
-| [LooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/LooksRareAggregator.sol) | 169 | Aggregate trades to different marketplaces | [@looksrare/contract-libs](https://github.com/LooksRare/contracts-libs) |
+| [LooksRareProxy](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/proxies/LooksRareProxy.sol) | 101 | Execute trades on LooksRare protocol (calls LooksRare) | [@looksrare/contracts-exchange-v1](https://github.com/looksrare/contracts-exchange-v1) |
+| [SeaportProxy](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/proxies/SeaportProxy.sol) | 206 | Execute trades on Seaport (calls Seaport) | N/A |
+| [ERC20EnabledLooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/ERC20EnabledLooksRareAggregator.sol) | 35 | Aggregate ERC20 trades to different marketplaces | N/A |
+| [LooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/LooksRareAggregator.sol) | 169 | Aggregate trades to different marketplaces | N/A |
 | [TokenReceiver](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/TokenReceiver.sol) | 29 | Contains callbacks that enable contracts to receive ERC721/ERC1155 tokens | N/A |
-| [TokenTransferrer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/TokenTransferrer.sol) | 19 | Enable contracts to make outward ERC721/ERC1155 token transfers | [@looksrare/contract-libs](https://github.com/LooksRare/contracts-libs) |
-| [TokenRescuer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/TokenRescuer.sol) | 18 | Enable owners to rescue trapped tokens from contracts | [@looksrare/contract-libs](https://github.com/LooksRare/contracts-libs) |
-| [ReentrancyGuard](https://github.com/LooksRare/contracts-libs/blob/master/contracts/ReentrancyGuard.sol) | 14 | Prevent re-entrancy attacks | N/A |
-| [OwnableTwoSteps](https://github.com/LooksRare/contracts-libs/blob/master/contracts/OwnableTwoSteps.sol) | 59 | Contract ownership logic, specifically 2 steps ownership transfers | N/A |
-| [SignatureChecker](https://github.com/LooksRare/contracts-libs/blob/master/contracts/SignatureChecker.sol) | 50 | Enable contracts to validate EIP-712 signatures | N/A |
-| [LowLevelERC20Approve](https://github.com/LooksRare/contracts-libs/blob/master/contracts/lowLevelCallers/LowLevelERC20Approve.sol) | 16 | Enable contracts to make ERC20 approvals | N/A |
-| [LowLevelERC20Transfer](https://github.com/LooksRare/contracts-libs/blob/master/contracts/lowLevelCallers/LowLevelERC20Transfer.sol) | 31 | Enable contracts to make ERC20 transfers | N/A |
-| [LowLevelERC721Transfer](https://github.com/LooksRare/contracts-libs/blob/master/contracts/lowLevelCallers/LowLevelERC721Transfer.sol) | 14 | Enable contracts to make ERC721 transfers | N/A |
-| [LowLevelERC1155Transfer](https://github.com/LooksRare/contracts-libs/blob/master/contracts/lowLevelCallers/LowLevelERC1155Transfer.sol) | 30 | Enable contracts to make ERC1155 transfers | N/A |
-| [LowLevelETH](https://github.com/LooksRare/contracts-libs/blob/master/contracts/lowLevelCallers/LowLevelETH.sol) | 33 | Enable contracts to make ETH transfers | N/A |
-| [IERC20](https://github.com/LooksRare/contracts-libs/blob/master/contracts/interfaces/IERC20.sol) | 15 | ERC20 interface | N/A |
-| [IERC721](https://github.com/LooksRare/contracts-libs/blob/master/contracts/interfaces/IERC721.sol) | 28 | ERC721 interface | N/A |
-| [IERC1155](https://github.com/LooksRare/contracts-libs/blob/master/contracts/interfaces/IERC1155.sol) | 34 | ERC1155 interface | N/A |
+| [TokenTransferrer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/TokenTransferrer.sol) | 19 | Enable contracts to make outward ERC721/ERC1155 token transfers | N/A |
+| [TokenRescuer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/TokenRescuer.sol) | 18 | Enable owners to rescue trapped tokens from contracts | N/A |
+| [ReentrancyGuard](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/ReentrancyGuard.sol) | 14 | Prevent re-entrancy attacks | N/A |
+| [OwnableTwoSteps](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/OwnableTwoSteps.sol) | 59 | Contract ownership logic, specifically 2 steps ownership transfers | N/A |
+| [SignatureChecker](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/SignatureChecker.sol) | 50 | Enable contracts to validate EIP-712 signatures | N/A |
+| [LowLevelERC20Approve](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/lowLevelCallers/LowLevelERC20Approve.sol) | 16 | Enable contracts to make ERC20 approvals | N/A |
+| [LowLevelERC20Transfer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/lowLevelCallers/LowLevelERC20Transfer.sol) | 31 | Enable contracts to make ERC20 transfers | N/A |
+| [LowLevelERC721Transfer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/lowLevelCallers/LowLevelERC721Transfer.sol) | 14 | Enable contracts to make ERC721 transfers | N/A |
+| [LowLevelERC1155Transfer](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/lowLevelCallers/LowLevelERC1155Transfer.sol) | 30 | Enable contracts to make ERC1155 transfers | N/A |
+| [LowLevelETH](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/lowLevelCallers/LowLevelETH.sol) | 33 | Enable contracts to make ETH transfers | N/A |
+| [IERC20](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/interfaces/IERC20.sol) | 15 | ERC20 interface | N/A |
+| [IERC721](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/interfaces/IERC721.sol) | 28 | ERC721 interface | N/A |
+| [IERC1155](https://github.com/code-423n4/2022-11-looksrare/blob/main/contracts/interfaces/IERC1155.sol) | 34 | ERC1155 interface | N/A |
 
 # Out of Scope
 

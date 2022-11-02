@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-import {IERC20} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC20.sol";
-import {IERC721} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC721.sol";
-import {OwnableTwoSteps} from "@looksrare/contracts-libs/contracts/OwnableTwoSteps.sol";
+import {IERC20} from "../../contracts/interfaces/IERC20.sol";
+import {IERC721} from "../../contracts/interfaces/IERC721.sol";
+import {OwnableTwoSteps} from "../../contracts/OwnableTwoSteps.sol";
 import {SeaportProxy} from "../../contracts/proxies/SeaportProxy.sol";
 import {ERC20EnabledLooksRareAggregator} from "../../contracts/ERC20EnabledLooksRareAggregator.sol";
 import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";

@@ -1205,11 +1205,6 @@
   dependencies:
     "@openzeppelin/contracts" "4.4.2"
 
-"@looksrare/contracts-libs@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@looksrare/contracts-libs/-/contracts-libs-2.0.2.tgz#75fee42ba211bdf054ca7eba3e197d7e35f6c02c"
-  integrity sha512-dI6oyz8RxL90yxBr4WAlTMYLZA5WbxruP9AY90sbbMd1idz7FdVUIsTLXtmEDXbZtSU0JrU0chNQ/mrjREJV6g==
-
 "@metamask/eth-sig-util@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@metamask/eth-sig-util/-/eth-sig-util-4.0.0.tgz#11553ba06de0d1352332c1bde28c8edd00e0dcf6"

@@ -3,7 +3,7 @@ pragma solidity 0.8.17;
 
 import {ILooksRareExchange} from "@looksrare/contracts-exchange-v1/contracts/interfaces/ILooksRareExchange.sol";
 import {OrderTypes} from "@looksrare/contracts-exchange-v1/contracts/libraries/OrderTypes.sol";
-import {IERC721} from "@looksrare/contracts-libs/contracts/interfaces/generic/IERC721.sol";
+import {IERC721} from "../../contracts/interfaces/IERC721.sol";
 import {LooksRareProxy} from "../../contracts/proxies/LooksRareProxy.sol";
 import {LooksRareAggregator} from "../../contracts/LooksRareAggregator.sol";
 import {V0Aggregator} from "../../contracts/prototype/V0Aggregator.sol";
