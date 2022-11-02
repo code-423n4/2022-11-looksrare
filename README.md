@@ -130,6 +130,12 @@ The line `if (address(this) != aggregator) revert InvalidCaller();` does it.
 - Does it use a side-chain?: False
 ```
 
+# Installation
+
+```
+yarn install
+```
+
 # Tests
 
 ## Foundry tests
