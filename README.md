@@ -34,8 +34,8 @@ These are the top-level contracts of the project.
 
 # Architecture
 
-![LooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/looksrare-aggregator-architecture.jpeg)
-![ERC20EnabledLooksRareAggregator](https://github.com/code-423n4/2022-11-looksrare/blob/main/looksrare-erc20-aggregator-architecture.jpeg)
+![looksrare-aggregator-architecture](https://user-images.githubusercontent.com/98446738/200664905-b7bd4126-d6bd-4d35-aad0-7b99f1ef84fa.jpeg)
+![looksrare-erc20-aggregator-architecture](https://user-images.githubusercontent.com/98446738/200664939-f4b21fb3-e045-4b65-95b6-bb5db053ea47.jpeg)
 
 # Scope
 
