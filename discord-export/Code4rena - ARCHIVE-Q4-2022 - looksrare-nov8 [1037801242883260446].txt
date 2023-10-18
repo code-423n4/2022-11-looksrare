@@ -1,0 +1,913 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / looksrare-nov8
+==============================================================
+
+[11/03/2022 18:54] itsmetechjay (pinned)
+👋 Hello and welcome to the contest channel for the $60,500 USDC **LooksRare Aggregator** contest!
+
+📆 Contest opens Tuesday, 08 November 2022 20:00 (20:00 UTC) and runs through Sunday, 13 November 2022 20:00 (20:00 UTC) (5 days).
+
+Please give a warm welcome to the LooksRare team, particularly @hiroshi, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-11-looksrare-aggregator-contest
+
+{Embed}
+https://code4rena.com/contests/2022-11-looksrare-aggregator-contest
+Code4rena LooksRare Aggregator contest
+$60,500 USDC
+8 November 2022—13 November 2022
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+peepoeyes (9) C4Keycap (3) 🙄 
+
+[11/03/2022 18:55] itsmetechjay
+Pinned a message.
+
+
+[11/04/2022 01:30] chaduke3730
+Cannot wait
+
+
+[11/04/2022 14:35] aviggiano
+nice contest
+
+
+[11/08/2022 20:02] ladboy233
+looks rareeeeeeee!
+
+
+[11/08/2022 20:10] 0x1f8b
+I ❤️ the flow diagram
+
+{Reactions}
+😻 (2) 
+
+[11/08/2022 20:15] thepicodes (pinned)
+**Automated findings: **https://gist.github.com/Picodes/0554505ff357a2da3bca5fbb839ee7da
+
+{Reactions}
+🫡 (3) 
+
+[11/08/2022 20:16] liveactionllamac4 (pinned)
+Wardens, please note that c4udit output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+**Automated findings:** https://gist.github.com/Picodes/0554505ff357a2da3bca5fbb839ee7da
+
+This will also be linked in the contest README file shortly.
+
+
+[11/08/2022 20:16] liveactionllamac4
+Pinned a message.
+
+
+[11/08/2022 20:16] liveactionllamac4
+Pinned a message.
+
+
+[11/08/2022 21:57] hiroshilooksrare
+Hey everyone this is Hiroshi, feel free to DM me if you have any questions 🫡
+
+{Reactions}
+🤝 
+
+[11/08/2022 22:26] aviggiano
+hi all
+
+
+[11/08/2022 22:27] aviggiano
+I have a question: what's the point of `TokenRescuer` transferring everything - 1 on `rescueETH` and `rescueER20`?
+
+
+[11/08/2022 22:50] hiroshilooksrare
+For gas savings
+
+{Reactions}
+👍 
+
+[11/09/2022 00:47] trustminimised
+Can you elaborate? I'm not following what the savings is here. Sorry if it's a dumb question, but I haven't seen this before.
+
+
+[11/09/2022 08:16] hiroshilooksrare
+it is because if we leave 1 wei in ETH or whichever ERC20 tokens in the contract, when a transfer from a user happens, it is not writing to storage from zero to nonzero and instead nonzero to nonzero and it costs less gas
+
+Ref: 
+https://etherscan.io/address/0x00000000006c3852cbef3e08e8df289169ede581
+https://twitter.com/z0r0zzz/status/1559711538252255232
+
+{Embed}
+https://etherscan.io/address/0x00000000006c3852cbef3e08e8df289169ede581
+Seaport 1.1 | Address 0x00000000006c3852cbef3e08e8df289169ede581 | ...
+The Contract Address 0x00000000006c3852cbef3e08e8df289169ede581 page allows users to view the source code, transactions, balances, and analytics for the contract address. Users can also interact and make transactions to the contract directly on Etherscan.
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/etherscan-logo-circle-A29B1.jpg
+
+{Embed}
+ross 🐀 (@z0r0zzz)
+https://twitter.com/z0r0zzz/status/1559711538252255232
+why is there 1 wei in seaport
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/FaU1XJSaAAE2baU-975B6.png
+Twitter
+
+{Reactions}
+👍 (5) 
+
+[11/09/2022 10:14] 0xdanielh
+where can we find the seaport and LooksrareExchange contract? just want to see the functions that proxy calls
+
+
+[11/09/2022 10:15] 0xdanielh
+Thanks for the quick reply!
+
+
+[11/09/2022 10:16] hiroshilooksrare
+https://github.com/ProjectOpenSea/seaport/blob/c30dd90272609677606f03f9c885466f15e891eb/reference/ReferenceConsideration.sol#L340
+
+{Embed}
+https://github.com/ProjectOpenSea/seaport/blob/c30dd90272609677606f03f9c885466f15e891eb/reference/ReferenceConsideration.sol
+seaport/ReferenceConsideration.sol at c30dd90272609677606f03f9c8854...
+Seaport is a marketplace protocol for safely and efficiently buying and selling NFTs. - seaport/ReferenceConsideration.sol at c30dd90272609677606f03f9c885466f15e891eb · ProjectOpenSea/seaport
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/seaport-DA0C6
+
+{Reactions}
+✅ 
+
+[11/09/2022 10:17] hiroshilooksrare
+https://github.com/ProjectOpenSea/seaport/blob/c30dd90272609677606f03f9c885466f15e891eb/reference/ReferenceConsideration.sol#L176
+
+{Embed}
+https://github.com/ProjectOpenSea/seaport/blob/c30dd90272609677606f03f9c885466f15e891eb/reference/ReferenceConsideration.sol
+seaport/ReferenceConsideration.sol at c30dd90272609677606f03f9c8854...
+Seaport is a marketplace protocol for safely and efficiently buying and selling NFTs. - seaport/ReferenceConsideration.sol at c30dd90272609677606f03f9c885466f15e891eb · ProjectOpenSea/seaport
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/seaport-DA0C6
+
+
+[11/09/2022 10:17] hiroshilooksrare
+We call these 2 Seaport functions
+
+
+[11/09/2022 10:18] hiroshilooksrare
+And this for LR https://github.com/LooksRare/contracts-exchange-v1/blob/master/contracts/LooksRareExchange.sol#L186
+
+{Embed}
+https://github.com/LooksRare/contracts-exchange-v1/blob/master/contracts/LooksRareExchange.sol
+contracts-exchange-v1/LooksRareExchange.sol at master · LooksRare/c...
+LooksRare exchange contracts (v1). Contribute to LooksRare/contracts-exchange-v1 development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/contracts-exchange-v1-B24C4
+
+
+[11/09/2022 10:19] 0xdanielh
+Thxx!
+
+
+[11/09/2022 10:50] wardog94
+Hello, is it normal that first time forge build takes 4000+ seconds?
+
+
+[11/09/2022 10:58] hiroshilooksrare
+Try running with `FOUNDRY_PROFILE=local forge build`
+
+
+[11/09/2022 11:05] wardog94
+I have that exported
+
+
+[11/09/2022 11:12] hiroshilooksrare
+can you try running the command above instead of exporting the env var
+
+
+[11/09/2022 12:54] wardog94
+My mistake, I set it incorrectly. Now builds in 150 sec
+
+
+[11/09/2022 13:36] hiroshilooksrare
+it should still not take 150 seconds
+
+
+[11/09/2022 14:45] perseverancesuccess2021
+Hello, I don't know why. But when I followed the instruction, I got a lot of errors : "FOUNDRY_PROFILE=local forge test
+[⠘] Compiling...2022-11-09T14:42:58.406842Z ERROR ethers_solc::resolver: failed to resolve versions
+[⠃] Compiling...
+Error:
+Discovered incompatible solidity versions in following
+: contracts/ERC20EnabledLooksRareAggregator.sol (0.8.17) imports:
+    contracts/lowLevelCallers/LowLevelERC20Transfer.sol (^0.8.14)
+    contracts/interfaces/IERC20EnabledLooksRareAggregator.sol (0.8.17)
+    contracts/interfaces/ILooksRareAggregator.sol (0.8.17)
+    contracts/libraries/OrderStructs.sol (0.8.17)
+    contracts/interfaces/IERC20.sol (^0.8.0)
+    contracts/libraries/OrderStructs.sol (0.8.17)
+    contracts/interfaces/ILooksRareAggregator.sol (0.8.17)
+    contracts/libraries/OrderStructs.sol (0.8.17)
+    contracts/libraries/OrderEnums.sol (0.8.17)
+Discovered incompatible solidity versions in following
+: contracts/LooksRareAggregator.sol (0.8.17) imports:
+    contracts/ReentrancyGuard.sol (^0.8.14)
+    contracts/lowLevelCallers/LowLevelERC20Approve.sol (^0.8.14)"
+
+
+[11/09/2022 14:45] perseverancesuccess2021
+Do you know why?
+
+
+[11/09/2022 14:58] perseverancesuccess2021
+So there are some incompatible solidity versions problem here.
+
+
+[11/09/2022 15:05] perseverancesuccess2021
+@hiroshi  please help me. Because I followed and installed all the dependencies as instructed in the oneliner "rm -Rf 2022-11-looksrare || true && git clone https://github.com/code-423n4/2022-11-looksrare.git && cd 2022-11-looksrare && yarn install && cp .env.template .env && FORGE_GAS_REPORT=true FOUNDRY_PROFILE=local forge test"
+
+{Embed}
+https://github.com/code-423n4/2022-11-looksrare.git
+GitHub - code-423n4/2022-11-looksrare
+Contribute to code-423n4/2022-11-looksrare development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/c0db8c8d-af21-4a8e-b552-041b71d3d58b-94C6F
+
+
+[11/09/2022 15:06] hiroshilooksrare
+is your solc on 0.8.17?
+
+
+[11/09/2022 15:09] road220
+anyone available for dm?
+
+
+[11/09/2022 15:10] hiroshilooksrare
+you can dm me
+
+
+[11/09/2022 16:23] perseverancesuccess2021
+I use the command "FOUNDRY_PROFILE=local forge build --use solc:0.8.17", then it can build most of the files. But still there is one file that has error. But this can be fixed manually by changing the compiler version in ERC1271Contract.sol . If there is some better way, please suggest. 
+[⠃] Compiling...
+[⠒] Compiling 89 files with 0.8.17
+[⠢] Solc 0.8.17 finished in 39.52ms
+Error:
+Compiler run failed
+error[5333]: ParserError: Source file requires different compiler version (current compiler is 0.8.17+commit.8df45f5f.Linux.g++) - note that nightly builds are considered to be strictly less than the released version
+ --> test/foundry/utils/ERC1271Contract.sol:2:1:
+  |
+2 | pragma solidity 0.8.14;
+
+
+[11/09/2022 16:26] hiroshilooksrare
+Can you change it to 0.8.17? It is supposed to be that. It was an error when I copied the tests from another repo over apologies.
+
+
+[11/09/2022 17:03] koolexc
+anyone available for DM?
+
+
+[11/09/2022 17:06] hiroshilooksrare
+yes you can dm me
+
+{Reactions}
+👌🏻 
+
+[11/09/2022 17:08] koolexc
+DMed
+
+
+[11/09/2022 17:43] hiroshilooksrare
+@perseverancesuccess we have pushed a fix, can you pull?
+
+{Reactions}
+👍 
+
+[11/09/2022 18:02] eyexploit
+hey a quick question, I saw same contest also available in immunefi, if you have to submit high severity bug, where will you?
+
+
+[11/09/2022 18:06] d_auditor
+Hi, I am new to how bug bounty on code4rena works. I reviewed the files in the looksrare contest and I want to submit 3 reports. How do I go about it?
+
+
+[11/09/2022 18:07] hiroshilooksrare
+here (the immunefi one doesn't apply to this repo during the contest)
+
+
+[11/09/2022 18:07] hiroshilooksrare
+https://code4rena.com/contests/2022-11-looksrare-aggregator-contest/submit
+
+{Embed}
+https://code4rena.com/contests/2022-11-looksrare-aggregator-contest/submit
+Submit finding | Code 423n4
+The future of audits is decentralized.
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/C4-banner-7C19B.png
+
+
+[11/09/2022 18:08] d_auditor
+Thanks @hiroshi
+
+
+[11/09/2022 19:36] eyexploit
+yeah, just saw
+
+
+[11/09/2022 23:24] perseverancesuccess2021
+Thank you. It works now. I use command "FOUNDRY_PROFILE=local forge test --use solc:0.8.17" and it works now. Thank you very much.
+
+
+[11/09/2022 23:24] hiroshilooksrare
+Awesome!
+
+
+[11/10/2022 10:15] .nalus
+Which erc20 tokens are supposed to be supported?
+
+
+[11/10/2022 10:44] hiroshilooksrare
+For the purpose of the contest it should assume any ERC20 tokens, but realistically it should cover at least WETH/USDC/DAI
+
+{Reactions}
+👍 (2) 
+
+[11/10/2022 16:23] koolexc
+What's the generic marketplace proxy which calls a generic sweep function ? is it used for now?
+
+
+[11/10/2022 16:23] hiroshilooksrare
+it just means in the future we might integrate with new marketplaces
+
+
+[11/10/2022 16:24] koolexc
+Gotcha
+
+
+[11/10/2022 16:24] hiroshilooksrare
+and the proxy should always follow `IProxy`
+
+
+[11/10/2022 16:24] koolexc
+Makes sense 👍🏻
+
+
+[11/10/2022 17:06] samater_
+if purchases in ERC20EnabledLooksRareAggregator are denoted in ERC20 where is msg.value coming from?
+
+
+[11/10/2022 17:06] hiroshilooksrare
+it's not just ERC20, it can be ERC20 + ETH orders
+
+
+[11/10/2022 17:07] hiroshilooksrare
+pure ETH -> LooksRareAggregator
+ERC20 -> ERC20EnabledLooksRareAggregator
+ERC20 + ETH -> ERC20EnabledLooksRareAggregator
+
+
+[11/10/2022 17:07] samater_
+Makes sense, thanks
+
+
+[11/10/2022 17:07] koolexc
+Any hint how to make compiling faster ?
+
+
+[11/10/2022 17:08] hiroshilooksrare
+`FOUNDRY_PROFILE=local forge build`
+
+
+[11/10/2022 17:08] hiroshilooksrare
+did you run with the local profile
+
+
+[11/10/2022 17:09] koolexc
+when building it is fast
+
+
+[11/10/2022 17:09] koolexc
+but when running tests and I make a change then it needs to compile first so it is taking longer time
+
+
+[11/10/2022 17:09] hiroshilooksrare
+did you run forge test with FOUNDRY_PROFILE=local?
+
+
+[11/10/2022 17:11] koolexc
+Thanks. looks like much faster now!
+
+
+[11/10/2022 17:11] koolexc
+I appreciate your prompt replies all the time.
+
+
+[11/10/2022 17:11] hiroshilooksrare
+np
+
+
+[11/10/2022 17:27] trustminimised
+Oh, I'm an idiot. I was reading this as `- 1  ether` for some reason. 😅 
+Get sleep before working on audits folks.
+
+{Reactions}
+👍 
+
+[11/10/2022 19:34] haruxe
+`QA report awards: $5,000 USDC` thats neat :PagChomp:
+
+{Reactions}
+👆 (2) 
+
+[11/10/2022 19:35] haruxe
+also the flow chart is dope
+
+
+[11/10/2022 22:02] deathstore
+hey isn't it normal?
+i started with FOUNDRY_PROFILE=local
+didn't change anything
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/image-3E344.png
+
+
+[11/10/2022 23:49] hiroshilooksrare
+yeah this doesn't look normal, the address is a signer
+
+
+[11/10/2022 23:51] hiroshilooksrare
+did you just run `FOUNDRY_PROFILE=local forge test`?
+
+
+[11/11/2022 03:02] carrotsmuggler
+@hiroshi dmd with a question
+
+
+[11/11/2022 08:12] hiroshilooksrare
+answered
+
+
+[11/11/2022 08:46] hiroshilooksrare (pinned)
+One thing to note: For LooksRareProxy we will only support ETH orders and not ERC20 orders
+
+
+[11/11/2022 11:40] deathstore
+yes
+
+
+[11/11/2022 11:43] hiroshilooksrare
+do you mind listing exactly what you did in the terminal, I will try to replicate
+
+
+[11/11/2022 12:31] anonnp
+The diagram is very simple and helpful, love it
+
+
+[11/11/2022 13:39] ladboy233
+What is the time you spend when you run the test?
+
+
+[11/11/2022 13:40] ladboy233
+The forge build command has been pending for a few minutes.
+
+
+[11/11/2022 13:41] illilli000
+did you try the quickstart command?
+
+
+[11/11/2022 13:51] hiroshilooksrare
+did you run with `FOUNDRY_PROFILE=local`?
+
+
+[11/11/2022 13:51] hiroshilooksrare (pinned)
+whenever you run `forge`, always run with `FOUNDRY_PROFILE=local`
+
+
+[11/11/2022 14:06] itsmetechjay
+Pinned a message.
+
+
+[11/11/2022 14:07] itsmetechjay
+Pinned a message.
+
+
+[11/11/2022 14:28] ladboy233
+ok thanks
+
+
+[11/11/2022 14:30] ladboy233
+Does anyone use windows for foundry?
+
+
+[11/11/2022 14:30] ladboy233
+Looks like FOUNDRY_PROFILE=local does not work in windows?
+
+
+[11/11/2022 14:53] rvierdiiev
+$env:FOUNDRY_PROFILE="local"
+do this using powershell and then just use forge test
+
+{Reactions}
+✅ 
+
+[11/11/2022 14:59] hiroshilooksrare
+worst case you can turn off via_ir in foundry.toml
+
+{Reactions}
+hi5 
+
+[11/11/2022 15:39] deathstore
+just quickstart command exactly
+
+
+[11/11/2022 15:41] ladboy233
+This works.
+
+
+[11/11/2022 15:41] ladboy233
+Thank you!
+
+
+[11/11/2022 15:46] zaskoh#2073
+you can also put FOUNDRY_PROFILE=local in your .env
+
+{Reactions}
+👍 
+
+[11/11/2022 15:46] hiroshilooksrare
+yeah good idea thanks for pointing out
+
+{Reactions}
+👍 
+
+[11/11/2022 16:02] deathstore
++
+
+
+[11/11/2022 16:22] hiroshilooksrare
+is this the only problematic test? can you try running the whole test suite except the ConflictedOrdersTest?
+
+
+[11/11/2022 16:52] acegawd
+DM @hiroshi
+
+{Reactions}
+👍 
+
+[11/11/2022 17:30] illilli000
+can you try editing `.env` and using infura instead of ankr?
+
+
+[11/11/2022 18:56] deathstore
+using what?
+
+
+[11/11/2022 18:57] illilli000
+an infura or alchemy account url
+
+
+[11/11/2022 18:58] deathstore
+change mainnet rpc url?
+
+{Reactions}
+👍 
+
+[11/11/2022 19:05] deathstore
+works without this two tests😁
+
+
+[11/11/2022 19:09] hiroshilooksrare
+did you try what @IllIllI suggested
+
+
+[11/11/2022 19:25] deathstore
+still doesn’t work with infura mainnet
+
+{Reactions}
+🙁 
+
+[11/11/2022 19:26] hiroshilooksrare
+I will take a look, meanwhile you can just run the build without this test, it should not affect your audit as it's a test not the actual code
+
+
+[11/11/2022 19:27] illilli000
+`foundryup`?
+
+
+[11/11/2022 19:27] deathstore
+ok, thanks
+
+
+[11/11/2022 19:27] hiroshilooksrare
+lol this actually is what fixes most generic issues
+
+
+[11/11/2022 19:27] deathstore
+?
+
+
+[11/11/2022 19:27] hiroshilooksrare
+it's to upgrade your foundry
+
+
+[11/11/2022 19:28] hiroshilooksrare
+try that one last time
+
+
+[11/11/2022 19:31] deathstore
+lol
+I did not think about that
+
+
+[11/11/2022 19:31] deathstore
+now all excellent
+
+
+[11/11/2022 19:31] hiroshilooksrare
+oh so it works?
+
+
+[11/11/2022 19:32] deathstore
+yes
+
+
+[11/11/2022 19:32] deathstore
+thanks
+
+
+[11/11/2022 19:32] illilli000
+yaayyyy. I usually include foundryup in the quickstart but for some reason I missed it this time
+
+
+[11/11/2022 19:32] hiroshilooksrare
+@IllIllI thank you so much 😛
+
+{Reactions}
+👍 (2) 
+
+[11/11/2022 19:32] deathstore
+it’s better to include
+i just forgot about that
+
+{Reactions}
+👍 
+
+[11/12/2022 18:23] Neon2835#2835
+@hiroshi Are the contracts LooksRareAggregator and ERC20EnabledLooksRareAggregator new features that have not been launched yet? If not, is there a visual UI interface for online experience?
+
+
+[11/12/2022 18:28] Neon2835#2835
+I checked the official website and did not find the corresponding UI interface and function,   guess it is not online， just to confirm
+
+
+[11/12/2022 18:30] hiroshilooksrare
+correct, we don't have an UI yet
+
+
+[11/12/2022 18:30] Neon2835#2835
+got it
+
+
+[11/12/2022 19:56] wardog94
+Hello, is the public report page updated mid contest? Because when I started the this contest, my finding was not on the list, but now it is. what can I do now?
+
+
+[11/13/2022 13:47] anonnp
+who can I dm? 🙏
+
+
+[11/13/2022 14:58] hiroshilooksrare
+You can DM me
+
+
+[11/13/2022 19:58] liveactionllamac4
+Hi, are you referring to the C4udit items? If so, yes those are out of scope, please see the pinned message here: https://discordapp.com/channels/810916927919620096/1037801242883260446/1039634574973599765
+
+If you are referring to something else, can you please submit a help request with a bit more information about your question? https://code4rena.com/help
+
+
+[11/13/2022 20:00] eyexploit
+just submit the last one, ufffffffff
+
+
+[11/13/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **LooksRare Aggregator** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+✅ (6) 
+
+[11/13/2022 20:02] chaduke3730
+good luck to all, at least I participated
+
+
+[11/13/2022 20:09] ladboy233
+👍
+
+
+[11/13/2022 20:14] hiroshilooksrare
+Thanks to everyone who participated! 🙏
+
+{Reactions}
+hi5 (11) 
+
+[12/01/2022 13:45] devabdee
+Hey. When we can expect the results of this contest?
+
+
+[12/01/2022 15:50] .satyam_
+Never
+
+
+[12/05/2022 13:50] thepicodes
+Ideally I'll try to wrap up the judging so it goes to post judging Q&A at the end of this week, so you can expect the results sometime next week at best
+
+{Reactions}
+🎉 (4) 
+
+[12/05/2022 14:21] saksham#7993
+Can we expect more contests rewards next week(considering you fix the math issue)
+
+
+[12/05/2022 14:35] ladboy233
+Hopefully this week lol
+
+
+[12/05/2022 14:39] saksham#7993
+https://tenor.com/view/hope-gif-19238353
+
+{Embed}
+https://tenor.com/view/hope-gif-19238353
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/hope-D6AAA.png
+
+{Reactions}
+chefskiss (2) 
+
+[12/05/2022 14:41] ladboy233
+https://tenor.com/view/detective-pikachu-anime-pikachu-ears-up-excited-gif-15119559
+
+{Embed}
+https://tenor.com/view/detective-pikachu-anime-pikachu-ears-up-excited-gif-15119559
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/detective-pikachu-anime-03216.png
+
+{Reactions}
+🙌🏻 (5) 
+
+[12/08/2022 20:59] ladboy233
+👀
+
+
+[12/08/2022 23:08] chaduke3730
+stay hopeful and ready for surprises
+
+
+[12/12/2022 07:59] Vadis#1387
+Hey, any news about Looksrare contest results?
+
+{Reactions}
+☝️ 
+
+[12/12/2022 09:29] Neon2835#2835
+no
+
+
+[12/14/2022 08:03] devabdee
+looks like not even in the judging phase yet 🥲  https://discord.com/channels/810916927919620096/810929015509483554/1052452840787951667
+
+
+[12/19/2022 13:48] R2#8087
+👀
+
+
+[12/19/2022 14:11] 0xbtk
+👀
+
+
+[12/19/2022 15:03] ladboy233
+🥲
+
+
+[12/22/2022 01:06] cloudellie
+:C4Keycap:  💸 🎉 **Awards for LooksRare Aggregator:**
+
+$10,871.41 USDC » @KingNFT 
+$10,871.41 USDC » @cccz 
+$5,205.96 USDC » @0xSmartContract 
+$4,875.78 USDC » @ronnyx2017 | Offside Labs 
+$3,938.27 USDC » @0x52 
+$3,864.16 USDC » @carrotsmuggler 
+$1,286.35 USDC » @IllIllI 
+$735.51 USDC » CloudX (@Migue , @pabliyo, @marce1993) 
+$429.24 USDC » @RaymondFam 
+$411.02 USDC » @0x1f8b 
+$330.18 USDC » @fatherOfBlocks 
+$330.18 USDC » @perseverancesuccess 
+$330.18 USDC » BClabs (@nalus , @Reptilia) 
+$330.18 USDC » @Roman 
+$330.18 USDC » @brgltd 
+$330.18 USDC » @Josiah 
+$309.38 USDC » @aviggiano 
+$288.06 USDC » V_B ( @Barichek, @vlad_bochok)
+$268.50 USDC » @carlitox477 
+$264.89 USDC » @chaduke 
+$264.89 USDC » @Vadis 
+$264.89 USDC » @rbserver 
+$233.07 USDC » @jayphbee 
+$228.55 USDC » Decurity (@beched, @me_na0mi, @Raz0r)
+$194.40 USDC » @zaskoh 
+$194.40 USDC » @Rolezn 
+$187.67 USDC » @SinceJuly
+$187.67 USDC » @0xc0ffEE 
+$151.33 USDC » @corerouter 
+$151.33 USDC » @joestakey 
+$151.33 USDC » @gz627 
+$117.18 USDC » @datapunk 
+$117.18 USDC » @tnevler 
+$113.56 USDC » @R2
+$80.83 USDC » @gianganhnguyen 
+$80.83 USDC » @shark 
+$80.83 USDC » @code-cipher 
+$77.22 USDC » @Koolex 
+$77.22 USDC » @koxuan 
+$77.22 USDC » @HE1M 
+$77.22 USDC » @Neon2835 
+$77.22 USDC » @M0ndoHEHE 
+$77.22 USDC » @teawaterwire 
+$77.22 USDC » @vv7 
+$77.22 USDC » @hyh 
+$36.34 USDC » @8olidity 
+$36.34 USDC » @Bin
+$36.34 USDC » @Aphak5010 
+$36.34 USDC » @Samater 
+$36.34 USDC » @Bnke 
+$36.34 USDC » @Nyx 
+$36.34 USDC » @0xladboy | Sparkware 
+$36.34 USDC » @comradeKtg 
+$36.34 USDC » @Hashlock 
+$36.34 USDC » @ReyAdmirado 
+$36.34 USDC » @EricTee 
+$36.34 USDC » @Awesome 
+$36.34 USDC » @Sathish9098 
+$36.34 USDC » @0xhacksmithh 
+$36.34 USDC » @Deivitto 
+$36.34 USDC » @ret2basic.eth 
+$36.34 USDC » @pashov 
+$36.34 USDC » @delfin454000 
+$36.34 USDC » @bearonbike 
+$36.34 USDC » @a12jmx 
+$36.34 USDC » @ch0bu 
+$36.34 USDC » @Waze 
+$36.34 USDC » @fs0c 
+$36.34 USDC » @Chom 
+$36.34 USDC » @horsefacts 
+$36.34 USDC » @ajtra 
+$36.34 USDC » @adriro 
+
+
+🏁 Findings summary
+---------------------------
+High risk findings: 0
+Med risk findings: 38 total, 6 unique
+Gas findings: 12 total, 12 unique
+QA findings: 54 total, 54 unique
+
+Awards will be distributed on Polygon within the next 1-2 weeks. **Congratulations, everyone!** 💸 💸 💸
+
+*If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+C4Keycap (13) yeehaw (5) goose (4) 🙏 (5) 4739_Skeletor 
+
+[12/22/2022 02:39] chaduke3730
+congratulations to all!
+
+{Reactions}
+👍 (6) 🎉 (4) 
+
+[01/09/2023 04:02] 0xhacksmithh
+is award distribution completed??
+
+
+[01/11/2023 03:48] Neon2835#2835
+is award distribution completed??
+
+
+[01/11/2023 03:49] Neon2835#2835
+Still haven't got any reply
+
+
+[01/11/2023 14:04] itsmetechjay
+LooksRare awards have been sent @0xhacksmithh @Neon2835 .  If you haven't received them, please open a help desk request and we can look into it.  https://code4rena.com/help
+
+{Embed}
+https://code4rena.com/help
+Help | Code 423n4
+Need help with something? Contact us here.
+Code4rena - ARCHIVE-Q4-2022 - looksrare-nov8 [1037801242883260446].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+👍 
+
+[02/27/2023 12:20] adriro
+looks like the report for this contest never came out?
+
+
+==============================================================
+Exported 159 message(s)
+==============================================================
